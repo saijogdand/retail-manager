@@ -1,0 +1,41 @@
+### Requirement
+
+1) Java - 8+
+2) Maven - 3 +
+3) Spring boot - 1.4
+
+### build the project and geneate war
+1) open command prompt and go to the project folder.
+2) mvn clean eclipse:eclipse
+3) mvn clean install -Dmaven.test.skip=true
+
+### If you would like to change the application port
+1) open application.properties file from resource folder.
+3) change the value for property "server.port". e.g. server.port=8081.
+
+### build and start the RetailManagerApplication
+1) open command prompt and go to the project folder.
+2) run mvn command as - mvn spring-boot:run
+3) your application will get started
+4) open chrome rest client or any rest client to use.
+
+### URL resources for (local)
+1) add new shop details -
+  1.1) Request url - http://localhost:8081/retailmanager/shop
+  1.2) It is http PUT method will accept json as request body e.g.
+  {
+  "shopName": "Shope name",
+  "shopAddress": {
+    "number": 1,
+    "postCode": "411041"
+  }
+ }
+ 
+2) Get near by shop based on latitude and longitude.
+  2.1) Request url - e.g. http://localhost:8081/retailmanager/shop?customerLongitude=73.7992634&customerLatitude=18.4427627
+  
+  
+  #### Run test cases and run server
+  
+ 1) open command prompt and go to the project folder.
+2) run mvn command as - mvn clean install -Dmaven.test.skip=false spring-boot:run
